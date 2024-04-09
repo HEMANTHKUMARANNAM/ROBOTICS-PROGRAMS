@@ -40,6 +40,7 @@ board = [
     [0, 0, 0, 0],
     [0, 1, 0, 0]
 ]
+
 start_index = (0, 0)
 end_index = (2, 3)
 
