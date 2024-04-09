@@ -2,7 +2,7 @@
 class Game:
     def __init__(self, n):
         self.n = n
-        self.board = b = [[0 for _ in range(n)] for _ in range(n)]
+        self.board = [[0 for _ in range(n)] for _ in range(n)]
 
     def is_safe(self, row, col):
         # diagonal check 1
