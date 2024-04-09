@@ -8,23 +8,16 @@ class Graph:
         self.graph[u].append(v)
     
     def DFSUtil(self, v, visited):
-        visited[v] = True
+        visited.add(v)
         print(v, end=' ')
-
-        for i in self.graph[v]:
-            if not visited[i]:
-                self.DFSUtil(i, visited)
+        for neighbour in self.graph[v]:
+            if neighbour not in visited:
+                self.DFSUtil(neighbour, visited)
     
-    def DFS(self):
-        V = len(self.graph)
-        visited = [False] * V
+    def DFS(self, v):
+        visited = set()
+        self.DFSUtil(v, visited)
 
-        for i in range(V):
-            if not visited[i]:
-                self.DFSUtil(i, visited)
-
-
-# Example usage:
 g = Graph()
 g.addEdge(0, 1)
 g.addEdge(0, 2)
@@ -32,9 +25,5 @@ g.addEdge(1, 2)
 g.addEdge(2, 0)
 g.addEdge(2, 3)
 g.addEdge(3, 3)
-
-
 print("Following is Depth First Traversal:")
-g.DFS()
-
-
+g.DFS(0)
