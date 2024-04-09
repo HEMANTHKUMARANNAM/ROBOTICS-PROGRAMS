@@ -1,5 +1,4 @@
 import random
-
 class WumpusWorld:
     def __init__(self, size):
         self.size = size

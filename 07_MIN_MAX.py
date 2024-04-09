@@ -6,10 +6,10 @@ def minimax(curDepth, nodeIndex, maxTurn, scores, targetDepth):
 
     if maxTurn:
         return max(minimax(curDepth + 1, nodeIndex * 2, False, scores, targetDepth),
-                   minimax(curDepth + 1, nodeIndex * 2 + 1, False, scores, targetDepth))
+                    minimax(curDepth + 1, nodeIndex * 2 + 1, False, scores, targetDepth))
     else:
         return min(minimax(curDepth + 1, nodeIndex * 2, True, scores, targetDepth),
-                   minimax(curDepth + 1, nodeIndex * 2 + 1, True, scores, targetDepth))
+                    minimax(curDepth + 1, nodeIndex * 2 + 1, True, scores, targetDepth))
 
 scores = [3, 5, 2, 9, 12, 5, 23, 23]
 treeDepth = int(math.log(len(scores), 2))
