@@ -53,7 +53,7 @@ class Game:
             print("")
 
 
-n = 4
+n = 5
 g = Game(n)
 g.solution(0)
 
